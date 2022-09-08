@@ -26,8 +26,8 @@ jobs:
       - checkout
       - run:
           name: "print pipeline"
-          - print_pipeline_id:
-              out: << pipeline.id >>
+          print_pipeline_id:
+            out: << pipeline.id >>
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
