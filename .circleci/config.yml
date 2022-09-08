@@ -6,11 +6,11 @@ commands:
   print_pipeline_id:
     description: "Print Pipeline ID"
     parameters:
-      out:
+      to:
         type: string
         default: "No Id"
     steps:
-      - run: echo << parameters.out >>
+      - run: echo << parameters.to >>
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -27,7 +27,7 @@ jobs:
       - run:
           name: "print pipeline"
           print_pipeline_id:
-            out: << pipeline.id >>
+            to: << pipeline.id >>
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
